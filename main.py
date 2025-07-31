@@ -20,6 +20,6 @@ app.include_router(match_router)
 # ✅ 启动时生成一个较复杂的二分图并注册为 'default'
 @app.on_event("startup")
 def preload_graph():
-    G = generate_bipartite_graph(n1=30, n2=30, edge_prob=0.4)
+    G = generate_complex_bipartite_graph()
     save_graph("default", G)
     print("✅ 图 'default' 已加载，共有", len(G.nodes), "个节点。")
