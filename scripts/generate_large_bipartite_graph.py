@@ -1,4 +1,3 @@
-
 import networkx as nx
 from graph_store import save_graph
 
@@ -6,9 +5,9 @@ def generate_complex_bipartite_graph():
     B = nx.Graph()
 
     # 左侧节点 U: u1 ~ u10
-    U = [f"u{{i}}" for i in range(1, 11)]
+    U = [f"u{i}" for i in range(1, 11)]
     # 右侧节点 V: v1 ~ v10
-    V = [f"v{{i}}" for i in range(1, 11)]
+    V = [f"v{i}" for i in range(1, 11)]
 
     B.add_nodes_from(U, bipartite=0)
     B.add_nodes_from(V, bipartite=1)
@@ -30,8 +29,3 @@ def generate_complex_bipartite_graph():
 
     B.add_edges_from(edges)
     return B
-
-if __name__ == "__main__":
-    G = generate_complex_bipartite_graph()
-    save_graph("large-bipartite", G)
-    print("✅ 复杂图 large-bipartite 成功生成并写入 GRAPH_DB。")
