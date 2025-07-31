@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from routers.match import router as match_router
 from fastapi.middleware.cors import CORSMiddleware
 from graph_store import save_graph
-from scripts.generate_large_bipartite_graph import generate_large_bipartite_graph
+from scripts.generate_large_bipartite_graph import generate_complex_bipartite_graph
 
 app = FastAPI(title="Graph Matching API")
 
